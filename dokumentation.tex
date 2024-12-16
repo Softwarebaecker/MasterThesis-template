@@ -1,0 +1,144 @@
+%%**************************************************************
+%% Vorlage fuer Bachelorarbeiten (o.ä.) der DHBW
+%%
+%% Autor: Tobias Dreher, Yves Fischer
+%% Datum: 06.07.2011
+%%
+%% Autor: Michael Gruben
+%% Datum: 15.05.2013
+%%
+%% Autor: Markus Barthel
+%% Datum: 22.08.2014
+%%**************************************************************
+
+
+\input{ads/header}
+
+\input{ads/glossary}
+\makeglossaries
+
+\begin{document}
+
+%TODO
+\listoftodos
+\newpage
+    % Deckblatt
+    \begin{spacing}{1}
+        \input{ads/deckblatt}
+    \end{spacing}
+    \newpage
+
+    \pagenumbering{Roman}
+
+
+    % Sperrvermerk
+    %\input{ads/sperrvermerk}
+    %\newpage
+
+    % Erklärung
+    \input{ads/erklaerung}
+    \newpage
+
+    % Abstract
+    \input{ads/abstract}
+    %\newpage
+
+
+
+    \pagestyle{plain}		% nur Seitenzahlen im Fuß
+
+
+
+    \RedeclareSectionCommand[
+    beforeskip=\kapitelabstand]{chapter} % stellt Abstand vor Kapitelüberschriften ein
+
+
+
+    % Inhaltsverzeichnis
+    \begin{spacing}{1}
+        \begingroup
+
+            % auskommentieren für Seitenzahlen unter Inhaltsverzeichnis
+            \renewcommand*{\chapterpagestyle}{empty}
+            \pagestyle{empty}
+
+
+
+            %für die Anzeige von Unterkapiteln im Inhaltsverzeichnis
+            \setcounter{tocdepth}{1}
+
+            \tableofcontents
+            \clearpage
+        \endgroup
+    \end{spacing}
+    \newpage
+
+
+    % Abkürzungsverzeichnis
+    \cleardoublepage
+    \begin{spacing}{1.5}
+    \input{ads/acronyms}
+    \end{spacing}
+
+    % Abbildungsverzeichnis
+    \cleardoublepage
+    \begin{spacing}{1.2}
+        \listoffigures
+    \end{spacing}
+
+    %Tabellenverzeichnis
+    \cleardoublepage
+    \listoftables
+    
+    \cleardoublepage
+    \printglossary[style=altlist,title=\langglossar]
+
+    % Quellcodeverzeichnis
+    %\cleardoublepage
+    %\lstlistoflistings
+    \cleardoublepage
+
+    \pagenumbering{arabic}
+
+    %Fuß und Kopfzeile
+%\usepackage{scrpage2}
+\ifoot{\autor} %Ich, links unten
+\cfoot{}
+\ofoot{\thepage}
+% \ihead{\includegraphics[height=30px]{images/AirbusLogo/AIRBUS_Blue.png}}
+\ihead{\includesvg[height=30px]{images/AirbusLogo/AIRBUS_Blue_margin}}
+\ohead{\includesvg[height=30px]{images/thi_logo_wb_RGB}}
+% \ohead{\includegraphics[height=30px]{images/thiRGB.jpg}}
+\automark[]{chapter}
+\renewcommand{\chapterpagestyle}{scrheadings}
+
+\pagestyle{scrheadings} %gemachte Einstellungen anwenden
+    %\pagestyle{headings}		% Kolumnentitel im Kopf, Seitenzahlen im Fuß
+    %\pagestyle{scrheadings} 	%gemachte Einstellungen anwenden
+
+    % Inhalt
+    \foreach \i in {01,02,03,04,05,06,07,08,09,...,10} {%
+        \edef\FileName{content/\i kapitel}%
+            \IfFileExists{\FileName}{%
+                \input{\FileName}
+            }
+            {%
+                %file does not exist
+            }
+    }
+
+    \clearpage
+
+    % Literaturverzeichnis
+    \cleardoublepage
+    \printbibliography
+
+    % Glossar
+    % \printglossary[style=altlist,title=\langglossar]
+
+    % sonstiger Anhang
+    \clearpage
+    \appendix
+    \input{ads/appendix}
+
+\end{document}

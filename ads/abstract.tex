@@ -1,0 +1,32 @@
+%!TEX root = ../dokumentation.tex
+
+\pagestyle{empty}
+
+\iflang{de}{%
+% Dieser deutsche Teil wird nur angezeigt, wenn die Sprache auf Deutsch eingestellt ist.
+\renewcommand{\abstractname}{\langabstract} % Text für Überschrift
+
+% \begin{otherlanguage}{english} % auskommentieren, wenn Abstract auf Deutsch sein soll
+\begin{abstract}
+    Simulatoren im militärischen Bereich benutzen häufig eine Dome-Projektion zur Darstellung der Außenwelt, die das Flugzeug umgibt. In einem solchen Dome ist die Leinwand üblicherweise nur wenige Meter vom Piloten entfernt und alle Objekte der Außenwelt werden monoskopisch auf dieser Leinwand dargestellt. Bei der Simulation einer Luftbetankung kommt es vor, dass sich der Tankschlauch zwischen der Leinwand und dem Piloten befindet.
+    Dies kann nur schwer über das Sichtsystem des Simulators dargestellt werden und der Pilot hat keine räumliche Wahrnehmung des Tankschlauches.
+    
+    In dieser Arbeit wird die Integration einer Augmented Reality Brille in das bestehende Sichtsystem untersucht, um die Darstellung von nahe gelegenen Objekten zu verbessern.
+    Es werden Algorithmen entwickelt, die den Übergang vom monoskopischen Sichtsystem in die stereoskopische Augmented Reality Brille korrigieren. Diese Algorithmen werden mittels einer Studie analysiert und bewertet.
+    
+    Die Studie zeigt, dass die verwendete Augmented-Reality-Brille eine bessere räumliche Wahrnehmung erzeugt. Allerdings wird kritisiert, dass das Sichtfeld der Brille deutlich zu klein ist und die Farbdarstellung störend unrealistisch ist.
+    
+
+\end{abstract}
+% \end{otherlanguage} % auskommentieren, wenn Abstract auf Deutsch sein soll
+}
+
+
+
+\iflang{en}{%
+% Dieser englische Teil wird nur angezeigt, wenn die Sprache auf Englisch eingestellt ist.
+\renewcommand{\abstractname}{\langabstract} % Text für Überschrift
+
+\begin{abstract}
+Keywords: acoustic emission, PZT, BALRUE, WILS, localisation, Qt
+\end{abstract}}

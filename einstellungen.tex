@@ -1,0 +1,180 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                   Einstellungen
+%
+% Hier können alle relevanten Einstellungen für diese Arbeit gesetzt werden.
+% Dazu gehören Angaben u.a. über den Autor sowie Formatierungen.
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Sprache %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Aktuell sind Deutsch und Englisch unterstützt.
+%% Es werden nicht nur alle vom Dokument erzeugten Texte in
+%% der entsprechenden Sprache angezeigt, sondern auch weitere
+%% Aspekte angepasst, wie z.B. die Anführungszeichen und
+%% Datumsformate.
+\setzesprache{de} % de oder en
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Angaben  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Die meisten der folgenden Daten werden auf dem
+%% Deckblatt angezeigt, einige auch im weiteren Verlauf
+%% des Dokuments.
+\setzemartrikelnr{7866387}
+\setzekurs{TIT14}
+\setzetitel{Erweiterung einer 2D-Projektion mit Augmented Reality zur Darstellung eines Luftbetankungsvorgangs in einem Flugsimulator}
+\setzedatumAbgabe{\DTMdate{2023-05-02}}%\today}
+\setzefirma{Airbus Defence and Space}
+\setzefirmenort{Manching}
+\setzeabgabeort{Ingolstadt}
+\setzeabschluss{Master of Science}
+\setzestudiengang{Informatik}
+\setzedhbw{Fakultät Informatik} %Fakultät
+\setzebetreuer{Detlef Schiron}
+\setzegutachter{Prof. Dr. Thomas Grauschopf}
+\setzegutachterzwei{Prof. Dr. Bernd Hafenrichter}
+\setzedatumAnmeldung{\DTMdate{2022-11-02}}
+\setzearbeit{Masterarbeit}
+\setzeautor{Nil Kuchenbäcker}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Literaturverzeichnis %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bei Fehlern während der Verarbeitung bitte in ads/header.tex bei der
+%% Einbindung des Pakets biblatex (ungefähr ab Zeile 110,
+%% einmal für jede Sprache), biber in bibtex ändern.
+\newcommand{\ladeliteratur}{%
+\addbibresource{bibliographie.bib}
+%\addbibresource{weitereDatei.bib}
+}
+%% Zitierstil
+%% siehe: http://ctan.mirrorcatalogs.com/macros/latex/contrib/biblatex/doc/biblatex.pdf (3.3.1 Citation Styles)
+%% mögliche Werte z.B numeric-comp, alphabetic, authoryear
+\setzezitierstil{numeric-comp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Verschiedene Schriftarten
+% laut nag Warnung: palatino obsolete, use mathpazo, helvet (option scaled=.95), courier instead
+\setzeschriftart{lmodern} % palatino oder goudysans, lmodern, libertine
+
+%% Paket um Textteile drehen zu können
+%\usepackage{rotating}
+%% Paket um Seite im Querformat anzuzeigen
+%\usepackage{lscape}
+
+%% Seitenränder
+\setzeseitenrand{3.5cm}
+
+%% Abstand vor Kapitelüberschriften zum oberen Seitenrand
+\setzekapitelabstand{15pt}
+
+%% Spaltenabstand
+\setzespaltenabstand{10pt}
+%%Zeilenabstand innerhalb einer Tabelle
+\setzezeilenabstand{1.5}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Verschiedenes  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Farben (Angabe in HTML-Notation mit großen Buchstaben)
+\newcommand{\ladefarben}{%
+    \definecolor{LinkColor}{HTML}{000000}
+    \definecolor{ListingBackground}{HTML}{FCF7DE}
+
+}
+%% Mathematikpakete benutzen (Pakete aktivieren)
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+%% Programmiersprachen Highlighting (Listings)
+\newcommand{\listingsettings}{%
+    \lstset{%
+        language=C++,			% Standardsprache des Quellcodes
+        numbers=left,			% Zeilennummern links
+        stepnumber=1,			% Jede Zeile nummerieren.
+        numbersep=5pt,			% 5pt Abstand zum Quellcode
+        numberstyle=\tiny,		% Zeichengrösse 'tiny' für die Nummern.
+        breaklines=true,		% Zeilen umbrechen wenn notwendig.
+        breakautoindent=true,	% Nach dem Zeilenumbruch Zeile einrücken.
+        postbreak=\space,		% Bei Leerzeichen umbrechen.
+        tabsize=2,				% Tabulatorgrösse 2
+        basicstyle=\ttfamily\footnotesize, % Nichtproportionale Schrift, klein für den Quellcode
+        showspaces=false,		% Leerzeichen nicht anzeigen.
+        showstringspaces=false,	% Leerzeichen auch in Strings ('') nicht anzeigen.
+        extendedchars=true,		% Alle Zeichen vom Latin1 Zeichensatz anzeigen.
+        captionpos=b,			% sets the caption-position to bottom
+        backgroundcolor=\color{ListingBackground}, % Hintergrundfarbe des Quellcodes setzen.
+        xleftmargin=0pt,		% Rand links
+        xrightmargin=0pt,		% Rand rechts
+        frame=single,			% Rahmen an
+        frameround=ffff,
+        rulecolor=\color{darkgray},	% Rahmenfarbe
+        fillcolor=\color{ListingBackground},
+        keywordstyle=\color[rgb]{0.133,0.133,0.6},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+        escapechar=\^
+    }
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Eigenes %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hier können Ergänzungen zur Präambel vorgenommen werden (eigene Pakete, Einstellungen)
+
+%Fuß und Kopfzeile
+\usepackage{scrlayer-scrpage}
+%\ifoot{\autor} %Ich, links unten
+%\cfoot{}
+%\ofoot{\thepage}
+%\ihead{\leftmark}
+%\ohead{\leftmark}
+%\automark[]{section}
+
+%\setheadsepline{1pt} %Dicke der Trennlinie Kopfzeile - Text
+%\setfootsepline{0.5pt} %Dicke der Trennlinie Fusszeile - Text
+%\pagestyle{scrheadings} %gemachte Einstellungen anwenden
+
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{svg}
+\usepackage{booktabs}
+% \usepackage[table,xcdraw]{xcolor}
+\usepackage{tabularx}
+\usepackage{ltablex}
+% \usepackage{todonotes}
+\usepackage[disable]{todonotes}
+\usepackage{siunitx}
+\usepackage{adjustbox}
+\iflang{de}{
+    \usepackage[ngerman]{datetime2} % für \DTMdiplaydate{} und \DTMdate{}
+}
+\iflang{en}{
+    \usepackage[en-GB]{datetime2} % für \DTMdiplaydate{} und \DTMdate{}
+}
+
+% \svgsetup{
+%     inkscapeexe="C:/Program Files/Inkscape/bin/inkscape.exe",
+%     inkscapepath=svgsubdir
+% }
+
+\definecolor{hellgelb}{rgb}{1,1,0.8}
+\definecolor{colKeys}{rgb}{0,0,1}
+\definecolor{colIdentifier}{rgb}{1,0,0}
+\definecolor{colComments}{rgb}{0,0.7,0.4}
+\definecolor{colString}{rgb}{0,0.5,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+
+% \makeatletter
+% \renewcommand*\env@matrix[1][\arraystretch]{%
+%   \edef\arraystretch{#1}%
+%   \hskip -\arraycolsep
+%   \let\@ifnextchar\new@ifnextchar
+%   \array{*\c@MaxMatrixCols c}}
+% \makeatother
+
+% \usepackage[utf8]{inputenc}
+% \usepackage{pgfplots}
+% \DeclareUnicodeCharacter{2212}{−}
+% \usepgfplotslibrary{groupplots,dateplot}
+% \usetikzlibrary{patterns,shapes.arrows}
+% \pgfplotsset{compat=newest}
